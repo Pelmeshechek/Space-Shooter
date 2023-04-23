@@ -71,8 +71,6 @@ class asteroid(GameSprite):
             self.rect.y = randint(-150, -65)
             self.speed = 1
         sprite.groupcollide(asteroids, bullets, False, True)
-        if self.rect.y - ene.rect.y <= 60:
-            ene.rect.y -= 150
 
 for i in range(2):
     aster = asteroid('asteroid.png', randint(80, win_width - 80), randint(-650, -300), 1, 35, 35)
@@ -118,7 +116,6 @@ while game:
                 bullets.add(a)
                 shot.play()
                 ammo -= 1
-                print(ammo)
     if key_pressed[K_LEFT] and player.rect.x > 10:
         player.rect.x -= player.speed
     if key_pressed[K_RIGHT] and player.rect.x < 630:
